@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Vazifa</title>
 </head>
+
 <body>
     <!-- KIMBIRINCHI BORISH -->
     <section>
@@ -18,46 +19,67 @@
 
             <form class="form">
                 <div class="form__box">
-                  <p class="form__desc">Masofa</p>
-                  <label for="inputnumber" class="sr-only"></label>
-                  <input type="number" class="form-control form__input" placeholder="100 km">
+                    <p class="form__desc">Masofa</p>
+                    <label for="inputnumber" class="sr-only"></label>
+                    <input type="number" class="form-control form__input" placeholder="100 km">
                 </div>
                 <button type="submit" class="btn btn-primary ">Hisoblash</button>
             </form>
 
-              <div>
-                  <ul class="form__list">
-                      <li class="form__item">
-                          <img src="./images/odam.png" alt="inson" class="fotm__img">
-                          <p class="form__item--desc">Piyoda</p>
-                          <p class="result__piyoda fs-5">Yetibborish vaqti</p>
-                      </li>
+            <div>
+                <ul class="form__list">
+                    <li class="form__item">
+                        <img src="./images/odam.png" alt="inson" class="fotm__img">
+                        <p class="form__item--desc">Piyoda</p>
+                        <p class="result__piyoda fs-5">Yetibborish vaqti</p>
+                    </li>
 
-                      <li class="form__item">
-                          <img src="./images/velosiped.svg" alt="" class="fotm__img">
-                          <p class="form__item--desc">Velosiped</p>
-                          <p class="result__velo fs-5">Yetibborish vaqti</p>
-                      </li>
+                    <li class="form__item">
+                        <img src="./images/velosiped.svg" alt="" class="fotm__img">
+                        <p class="form__item--desc">Velosiped</p>
+                        <p class="result__velo fs-5">Yetibborish vaqti</p>
+                    </li>
 
-                      <li class="form__item">
-                          <img src="./images/auto.svg" alt="" class="fotm__img">
-                          <p class="form__item--desc">Mashina</p>
-                          <p class="result__auto fs-5">Yetibborish vaqti</p>
-                      </li>
+                    <li class="form__item">
+                        <img src="./images/auto.svg" alt="" class="fotm__img">
+                        <p class="form__item--desc">Mashina</p>
+                        <p class="result__auto fs-5">Yetibborish vaqti</p>
+                    </li>
 
-                      <li class="form__item">
+                    <li class="form__item">
                         <div class="img__box"><img src="./images/samolyot.svg" alt="" class="fotm__img"></div>
                         <p class="form__item--desc">Samolyot</p>
                         <p class="result__plan fs-5">Yetibborish vaqti</p>
                     </li>
 
-                  </ul>
-              </div>
+                </ul>
+            </div>
         </div>
     </section>
 
+    <!-- TEMPERATURA CONVERTERI -->
+    <section class="temp">
+        <div class="container">
+            <h2 class="heading text-center mb-5">Temperatura converteri</h2>
+            <form class="temp__form">
+                <div class="form__box d-flex mb-3">
+                    <p class="temp__desc1">Harorat celsiyda</p>
+                    <input type="number" class="form-control temp__input m-0" placeholder="100C">
+                </div>
 
-<script src="./js/main.js"></script>
+                <div class="form__box d-flex">
+                    <p class="temp__desc1">Harorat Farengeyteda</p>
+                    <p class="temp__return">? F</p>
+                </div>
+                <div class="form__box1">
+                    <button type="submit" class="btn btn-primary mt-3">Hisoblash</button>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

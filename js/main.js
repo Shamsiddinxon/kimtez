@@ -10,8 +10,6 @@ let velo = 20.1;
 let auto = 70;
 let plan = 800;
 
-
-
 const speed = function (inputValue, age) {
   let speed = (inputValue / age).toFixed(2);
   return `${speed} soat`;
@@ -25,9 +23,29 @@ elForm.addEventListener("submit", function (evt) {
 
   console.log(inputValue);
 
-  elResultPiyoda.textContent = speed(inputValue,piyoda);
-  elResultVelo.textContent = speed(inputValue,velo);
-  elResultAuto.textContent = speed(inputValue,auto);
-  elResultPlan.textContent = speed(inputValue,plan);
+  elResultPiyoda.textContent = speed(inputValue, piyoda);
+  elResultVelo.textContent = speed(inputValue, velo);
+  elResultAuto.textContent = speed(inputValue, auto);
+  elResultPlan.textContent = speed(inputValue, plan);
+});
+
+// TEMPERATURA
+
+let elTempForm = document.querySelector(".temp__form");
+let elTempInput = document.querySelector(".temp__input");
+let elTempReturn = document.querySelector(".temp__return");
+
+const selse = function (tempValue) {
+  let age = (tempValue * 9) / 5 + 32;
+  return age;
+};
+
+elTempForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+    let tempValue = elTempInput.value;
+    tempValue = tempValue * 1;
+
+    elTempReturn.textContent =`${selse(tempValue)} F`
 
 });
