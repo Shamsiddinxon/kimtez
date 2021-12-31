@@ -63,14 +63,11 @@ elHaForm.addEventListener("change", function () {
   let temperatura = elHaInput.value;
   temperatura = temperatura * 1;
 
-  elFormHeadingHa.classList.remove("text-success");
-  elFormHeadingYoq.classList.remove("text-danger");
-
-  if ( temperatura >= 5 && temperatura <=30 )  {
+  if ( temperatura >= 5 && temperatura <=30 && !elYomgir.checked )  {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
     console.log(temperatura);
-  } else if (elZal.checked && temperatura <= 5) {
+  } else if (elZal.checked && temperatura != 0) {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
   } else if (elYomgir.checked && !elZal.checked || temperatura <= 4 ) {
@@ -78,9 +75,6 @@ elHaForm.addEventListener("change", function () {
     elFormHeadingYoq.classList.add("text-danger");
   } else if (elZal.checked && temperatura <= 5) {
     elFormHeadingHa.classList.add("text-success");
-    elFormHeadingYoq.classList.remove("text-danger");
-  }else {
-    elFormHeadingHa.classList.remove("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
   }
 })
