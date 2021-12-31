@@ -66,17 +66,21 @@ elHaForm.addEventListener("change", function () {
   elFormHeadingHa.classList.remove("text-success");
   elFormHeadingYoq.classList.remove("text-danger");
 
-  if (elZal.checked && temperatura <= 5) {
+  if ( temperatura >= 5 && temperatura <=30 )  {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
-  } else if (elYomgir.checked && !elZal.checked || temperatura <= 5 ) {
-    elFormHeadingHa.classList.remove("text-success");
-    elFormHeadingYoq.classList.add("text-danger");
-  } else if ( temperatura > 5 && temperatura < 30 )  {
-    elFormHeadingHa.classList.add("text-success");
-    elFormHeadingYoq.classList.remove("text-danger");
+    console.log(temperatura);
   } else if (elZal.checked && temperatura <= 5) {
     elFormHeadingHa.classList.add("text-success");
+    elFormHeadingYoq.classList.remove("text-danger");
+  } else if (elYomgir.checked && !elZal.checked || temperatura <= 4 ) {
+    elFormHeadingHa.classList.remove("text-success");
+    elFormHeadingYoq.classList.add("text-danger");
+  } else if (elZal.checked && temperatura <= 5) {
+    elFormHeadingHa.classList.add("text-success");
+    elFormHeadingYoq.classList.remove("text-danger");
+  }else {
+    elFormHeadingHa.classList.remove("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
   }
 })
