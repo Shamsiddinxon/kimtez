@@ -55,11 +55,32 @@ let elHaForm = document.querySelector(".ha__form");
 let elHaInput = document.querySelector(".ha__input");
 let elHaCeckout = document.querySelector(".ha__checkout");
 let HaCheckout1 = document.querySelector(".ha__checkout1");
+let elFormHeadingHa = document.querySelector(".ha__heading");
+let elFormHeadingYoq = document.querySelector(".yoq__heading");
 
-elTempForm.addEventListener("submit", function (evt) {
+
+
+elHaForm.addEventListener("change", function (evt) {
   evt.preventDefault();
 
+  let haInputValue = elHaInput.value;
+  haInputValue = haInputValue * 1;
 
+  elHaCeckout = Boolean(elHaCeckout)
 
+  elFormHeadingHa.style.color = "blac";
+    elFormHeadingYoq.style.color = "blac";
 
+  if ((haInputValue > 5) && !elHaCeckout ){
+    elFormHeadingHa.style.color = "green";
+    elFormHeadingYoq.style.color = "blac";
+
+    console.log(elHaCeckout);
+  } else if (elHaCeckout) {
+    elFormHeadingYoq.style.color = "red";
+    elFormHeadingHa.style.color = "blac";
+
+  } else {
+
+  }
 })
