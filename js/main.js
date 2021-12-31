@@ -53,28 +53,30 @@ elTempForm.addEventListener("submit", function (evt) {
 
 let elHaForm = document.querySelector(".ha__form");
 let elHaInput = document.querySelector(".ha__input");
-let elHaCheckout = document.querySelector(".ha__checkout");
-let HaCheckout1 = document.querySelector(".ha__checkout1");
+let elYomgir = document.querySelector(".ha__yomgir");
+let elZal = document.querySelector(".ha__zal");
 let elFormHeadingHa = document.querySelector(".ha__heading");
 let elFormHeadingYoq = document.querySelector(".yoq__heading");
 
-
-
 elHaForm.addEventListener("change", function () {
 
-  let haInputValue = elHaInput.value;
-  haInputValue = haInputValue * 1;
+  let temperatura = elHaInput.value;
+  temperatura = temperatura * 1;
 
   elFormHeadingHa.classList.remove("text-success");
   elFormHeadingYoq.classList.remove("text-danger");
 
-  if (elHaCheckout.checked && !HaCheckout1.checked ) {
-    elFormHeadingHa.classList.remove("text-success");
-    elFormHeadingYoq.classList.add("text-danger");
-
-  } else if ( haInputValue > 5 && haInputValue < 30 )  {
+  if (elZal.checked && temperatura <= 5) {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
-
+  } else if (elYomgir.checked && !elZal.checked || temperatura <= 5 ) {
+    elFormHeadingHa.classList.remove("text-success");
+    elFormHeadingYoq.classList.add("text-danger");
+  } else if ( temperatura > 5 && temperatura < 30 )  {
+    elFormHeadingHa.classList.add("text-success");
+    elFormHeadingYoq.classList.remove("text-danger");
+  } else if (elZal.checked && temperatura <= 5) {
+    elFormHeadingHa.classList.add("text-success");
+    elFormHeadingYoq.classList.remove("text-danger");
   }
 })
