@@ -43,9 +43,23 @@ const selse = function (tempValue) {
 elTempForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-    let tempValue = elTempInput.value;
-    tempValue = tempValue * 1;
+  let tempValue = elTempInput.value;
+  tempValue = tempValue * 1;
 
-    elTempReturn.textContent =`${selse(tempValue)} F`
-
+  elTempReturn.textContent = `${selse(tempValue)} F`;
 });
+
+// HAYO'Q
+
+let elHaForm = document.querySelector(".ha__form");
+let elHaInput = document.querySelector(".ha__input");
+let elHaCeckout = document.querySelector(".ha__checkout");
+let HaCheckout1 = document.querySelector(".ha__checkout1");
+
+elTempForm.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+
+
+
+})

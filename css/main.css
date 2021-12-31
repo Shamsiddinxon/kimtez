@@ -113,3 +113,31 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+/* HAYO'Q */
+
+.ha__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ha__box,.form-check {
+    display: flex;
+    justify-content: center;
+}
+
+.ha__input {
+    width: 150px;
+    margin: 0;
+    margin-left: 20px;
+}
+
+.form-check-label {
+    margin-left: 20px;
+    width: 153px;
+}
+
+ /* {
+
+} */
