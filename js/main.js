@@ -10,23 +10,30 @@ let velo = 20.1;
 let auto = 70;
 let plan = 800;
 
-const speed = function (inputValue, age) {
-  let speed = (inputValue / age).toFixed(2);
-  return `${speed} soat`;
+const speed = function (masofa, age) {
+  let time = masofa / age;
+  let soat = Math.floor(time);
+  let minut = Math.round((time.toFixed(2) - soat) * 60);
+
+  if (soat > 0) {
+    return `${soat}soat, ${minut}min`;
+  } else if(soat <= 0) {
+    return `${minut}min`;
+  }
+
 };
 
 elForm.addEventListener("submit", function (evt) {
   evt.preventDefault();
 
-  let inputValue = elFormInput.value;
-  inputValue = inputValue * 1;
+  let masofa = elFormInput.value;
+  masofa = masofa * 1;
 
-  console.log(inputValue);
 
-  elResultPiyoda.textContent = speed(inputValue, piyoda);
-  elResultVelo.textContent = speed(inputValue, velo);
-  elResultAuto.textContent = speed(inputValue, auto);
-  elResultPlan.textContent = speed(inputValue, plan);
+  elResultPiyoda.textContent = speed(masofa, piyoda);
+  elResultVelo.textContent = speed(masofa, velo);
+  elResultAuto.textContent = speed(masofa, auto);
+  elResultPlan.textContent = speed(masofa, plan);
 });
 
 // TEMPERATURA
@@ -59,22 +66,21 @@ let elFormHeadingHa = document.querySelector(".ha__heading");
 let elFormHeadingYoq = document.querySelector(".yoq__heading");
 
 elHaForm.addEventListener("change", function () {
-
   let temperatura = elHaInput.value;
   temperatura = temperatura * 1;
 
-  if ( temperatura >= 5 && temperatura <=30 && !elYomgir.checked )  {
+  if (temperatura >= 5 && temperatura <= 30 && !elYomgir.checked) {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
     console.log(temperatura);
-  } else if (elZal.checked && temperatura != 0) {
+  } else if (elZal.checked && temperatura >= 5) {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
-  } else if (elYomgir.checked && !elZal.checked || temperatura <= 4 ) {
+  } else if ((elYomgir.checked && !elZal.checked) || temperatura <= 4) {
     elFormHeadingHa.classList.remove("text-success");
     elFormHeadingYoq.classList.add("text-danger");
   } else if (elZal.checked && temperatura <= 5) {
     elFormHeadingHa.classList.add("text-success");
     elFormHeadingYoq.classList.remove("text-danger");
   }
-})
+});
